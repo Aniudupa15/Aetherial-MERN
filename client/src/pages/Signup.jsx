@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import OAuth from '../components/OAuth';
+import { signInSuccess } from '../redux/user/userSlice'; // Import your signInSuccess action
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch(); // Get the dispatch function
   const navigate = useNavigate();
   
   const handleChange = (e) => {
@@ -27,6 +30,7 @@ export default function SignUp() {
       });
       if (res.status === 200) {
         setLoading(false);
+        dispatch(signInSuccess(formData)); // Update user's authentication state
         navigate('/');
       }
     } catch (error) {

@@ -118,14 +118,6 @@ export default function Widget() {
                 <div className="flex items-center space-x-2">
                   <span>Aetherial Guide: Anirudh Udupa</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <img src="https://placehold.co/20x20" alt="Instagram Icon" />
-                  <span>mdbbootstrap</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <img src="https://placehold.co/20x20" alt="Facebook Icon" />
-                  <span>mdbbootstrap</span>
-                </div>
               </div>
             </div>
 
@@ -160,23 +152,7 @@ export default function Widget() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold">Blood Group</h4>
-                    <p>Johnatan Smith</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p>example@example.com</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Phone</h4>
-                    <p>(097) 234-5678</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Mobile</h4>
-                    <p>(098) 765-4321</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Address</h4>
-                    <p>Bay Area, San Francisco, CA</p>
+                    <p>B+</p>
                   </div>
                 </div>
               </div>

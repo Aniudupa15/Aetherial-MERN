@@ -96,4 +96,30 @@ const google = async (req, res, next) => {
     next(error);
   }
 };
-module.exports = { signin, signup, google };
+
+const UserForm = require("../models/user.model.js");
+
+const submitForm = async (req, res, next) => {
+  try {
+    const { name, bloodGroup, phone, altPhone, address } = req.body;
+
+    // Generate user ID starting with 'ATXXXX'
+    const userId = 'AT' + Math.random().toString(36).substr(2, 4).toUpperCase();
+
+    const user = new UserForm({
+      _id: userId,
+      name,
+      bloodGroup,
+      phone,
+      altPhone,
+      address
+    });
+
+    await user.save();
+    res.status(200).json({ message: "User data submitted successfully", userId });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { signin, signup, google, submitForm };
